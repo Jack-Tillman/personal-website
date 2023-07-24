@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500&family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500&family=Poppins&display=swap');
 
 
 
@@ -15,7 +15,7 @@ main {
 
 section {
     max-width:55vw;
-    min-height:8em; /* honestly not sure the best height to set for this, but this works for now on all viewports i tried!*/
+    min-height:8em; 
     background-color:#fbfde0;
     padding: 0.5em;
     margin: 2em auto;
@@ -47,7 +47,7 @@ h2 {
 .pic1,
 .pic3 {
     float: left;
-    margin: 0em 1em 3em 0em; /*3em for margin-bottom to push text to the right*/
+    margin: 0em 1em 3em 0em; 
 
    
    
@@ -67,4 +67,4 @@ h2 {
 .pic3{
     height:180px;
     width:320px;
-}
+} */

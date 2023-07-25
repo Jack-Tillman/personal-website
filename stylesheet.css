@@ -78,7 +78,7 @@ footer {
     background-color: azure;
     text-align: center;
     min-width: 100%;
-    position: fixed;
+    position: relative;
     margin: 0;
     bottom: 0;
     box-shadow: 8px 2px 10px 1px rgb(0, 0, 0);
@@ -121,14 +121,13 @@ li {
 
 .header-ul a.current {
     /* this puts a black underline beneath the current page in the nav bar */
-    border-bottom: 1px solid black;
-
+    border-bottom: 3px solid black;
 }
 
 p {
+    /* for increased readability*/
     line-height: 1.5;
     margin-left:1rem;
-    /* for increased readability*/
 }
 
 .description {
@@ -137,21 +136,19 @@ p {
 }
 
 blockquote {
-    padding: 4rem 2rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Playfair Display', Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: bolder;
     text-align: center;
-    font-family: 'Playfair Display', Helvetica, sans-serif;
     text-shadow: rgb(255, 255, 255) 2px 2px 2px;
-    color: rgb(0, 0, 0);
-
+    padding: 4rem 2rem;
 }
 
 section {
     border-top: 1px solid rgb(1, 88, 37);
-    box-sizing: border-box;
-    padding: 2em 1em;
     max-width: 65vw;
+    padding: 2em 1em;
     margin: 0 auto;
 }
 

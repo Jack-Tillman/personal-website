@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&family=Playfair+Display:wght@500&family=Poppins&display=swap');
 
-/* To Do: 
-- Make all units REM 
-- Make sure new color scheme is in all areas
-- Make contact page  
-*/
-
+/* Elements present across all web pages  */
 
 * {
     /* makes all elements border-box */
@@ -19,27 +14,18 @@ body {
 }
 
 main {
-    background-color: #e3e6c5 ;
+    display: flex;
+    flex-direction: column;
+    background-color: #e3e6c5;
     font-family: Lato, Helvetica, sans-serif;
     font-size: 1.5rem;
     text-align: left;
     max-width: 65vw;
-    min-height: 92vh;
+    min-height: 91vh;
     margin: 0 auto;
-    /*makes the main section take up 100% of viewport height*/
-    padding: 5rem 1rem;
-}
-
-.portfolio-section {
-    background-color: #38192d ;
-    color:#e3e6c5 ;
-    max-width: 55vw;
-    min-height: 8rem;
-    padding: 0.5rem 1.5rem;
-    margin: 2.5rem auto;
-    border-radius:5%;
-    box-shadow: 5px 10px 5px #554951;
-    overflow: auto;
+    /* 8rem for top padding to ensure the content is not cut off by header*/
+    padding: 8rem 1rem;
+    position: static;
 }
 
 header {
@@ -48,10 +34,12 @@ header {
     font-size: 2rem;
     min-width: 100%;
     padding: 0em 1em 0em 1em;
-    position: fixed; /*  header persists at top of page  */ 
+    position: fixed;
+    /*  header persists at top of page  */
     top: 0;
     box-shadow: 0 2px 4px -1px rgb(54, 40, 2);
     overflow: auto;
+    margin-bottom: 1rem;
 }
 
 .header-ul {
@@ -59,21 +47,49 @@ header {
     text-decoration: none;
     list-style-type: none;
     margin: 0;
-    float: right;
 }
 
-h1 {
-    font-family: 'Bebas Neue', Helvetica, sans-serif;
-    margin: 1rem 0;
-    text-shadow: rgb(255, 255, 255) 5px 5px 1px;
+.header-name {
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0;
 }
 
-h2 {
-    font-family:'Poppins', sans-serif;
-    margin-left: 1rem;
+header li a:hover {
+    /*changes color when hovering*/
+    color: #8f3562;
+    transition: 0.2s;
+}
+
+header li a:active {
+    color:#2b2d42;
+    transition: 0.2s;
+}
+
+.header-ul a.current {
+    /* this puts a black underline beneath the current page in the nav bar */
+    border-bottom: 3px solid #8f3562;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    margin: 0 0.5em 0 0;
+    padding: 0.5em 0.5em 0em 0.5em;
+    display: inline-block;
 }
 
 footer {
+    display: flex;
+    justify-content: center;
     background-color: #d98d3d;
     text-align: center;
     min-width: 100%;
@@ -85,18 +101,6 @@ footer {
     overflow: auto;
 }
 
-.name {
-    display: inline-block;
-    margin: 0.5em;
-    padding: 0;
-}
-
-header li a:hover {
-    /*changes color when hovering*/
-    color: rgb(25, 175, 125);
-    transition: 0.2s;
-}
-
 .footerlogo {
     width: 40px;
     height: 40px;
@@ -105,29 +109,36 @@ header li a:hover {
     text-align: center;
 }
 
-
-a {
-    text-decoration: none;
-    color: black;
+h1 {
+    font-family: 'Bebas Neue', Helvetica, sans-serif;
+    margin: 1rem 0;
+    text-shadow: rgb(255, 255, 255) 2px 3px 1px;
 }
 
-li {
-    margin: 0 0.5em 0 0;
-    padding: 0.5em 0.5em 0em 0.5em;
-    display: inline-block;
-
-}
-
-.header-ul a.current {
-    /* this puts a black underline beneath the current page in the nav bar */
-    border-bottom: 3px solid black;
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 1rem;
 }
 
 p {
     /* for increased readability*/
     line-height: 1.5;
-    margin-left:1rem;
+    margin-left: 1rem;
 }
+
+section {
+    border-top: 1px solid rgb(1, 88, 37);
+    max-width: 65vw;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+}
+
+img {
+    width: 12.5rem;
+    height: 12.5rem;
+}
+
+/* Home Page */
 
 .description {
     font-size: 1.5rem;
@@ -144,17 +155,7 @@ blockquote {
     padding: 4rem 2rem;
 }
 
-section {
-    border-top: 1px solid rgb(1, 88, 37);
-    max-width: 65vw;
-    padding: 2em 1em;
-    margin: 0 auto;
-}
-
-img {
-    width: 12.5rem;
-    height: 12.5rem;
-}
+/* About Page */
 
 .gaming-section,
 .hiking-section,
@@ -189,50 +190,64 @@ img {
     clear: right;
 }
 
+/* Portfolio Page */
 
-.pic1,
-.pic3 {
+.portfolio-section {
+    background-color: #38192d;
+    color: #e3e6c5;
+    max-width: 55vw;
+    min-height: 8rem;
+    padding: 0.5rem 1.5rem;
+    margin: 2.5rem auto;
+    border-radius: 5%;
+    box-shadow: 5px 10px 5px #554951;
+    overflow: auto;
+}
+
+.port-pic-one,
+.port-pic-three {
     float: left;
     margin: 0 1.5rem 2.5rem 0;
     /*3em for margin-bottom to push text to the right*/
 
 }
 
-
-.pic2 {
+.port-pic-two {
     float: right;
     margin: 0em 0em 1.5rem 1.5rem;
 }
 
-.pic1,
-.pic2,
-.pic3 {
+.port-pic-one,
+.port-pic-two,
+.port-pic-three {
     height: 11.25rem;
     width: 20rem;
 }
 
+/* Contact Page */
+
 .submission-main {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 form {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #38192d ;
-    border:2px solid #38192d;
-    color:#e3e6c5;
-    font-size:2rem;
+    background-color: #d98d3d;
+    border: 2px solid #38192d;
+    color: #38192d;
+    font-size: 2.25rem;
     padding: 4rem;
     margin: 1rem;
     max-width: 55vw;
     min-height: 8rem;
-    border-radius:5%;
+    border-radius: 5%;
     box-shadow: 5px 10px 5px #554951;
-    border-radius:5%;
+    border-radius: 5%;
     overflow: auto;
 }
 
@@ -241,59 +256,111 @@ label {
 }
 
 input {
-    line-height:1.5rem;
-    min-height:2rem;
+    line-height: 1.5rem;
+    min-height: 2rem;
 }
 
 #message {
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
+}
+
+/* submit button */
+
+.submission-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    border: none;
+}
+
+.submission-h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #submit {
-    background-color:#d98d3d;
-    color:#ffffff;
-    text-shadow: 0px 2px 1px black;
-    border: 2px solid #f5aa5b;
+    background-color: #2b2d42;
+    color: #ffffff;
+    border: 2px solid black;
     border-radius: 1.5rem;
-    box-shadow: #422800 3px 3px 0 0;    
+    box-shadow: #422800 3px 3px 0 0;
     cursor: pointer;
     display: inline-block;
-    font-weight:700;
-    font-size:1rem;
+    font-weight: 700;
+    font-size: 1rem;
     padding: 0.5rem 1.5rem;
-    line-height:2rem;
+    line-height: 2rem;
     text-align: center;
-    text-decoration: none;   
+    text-decoration: none;
 }
 
 #submit:hover {
-    background-color: #d98d3d;
+    background-color: #dd6b6b;
 }
 
 #submit:active {
-    box-shadow: #dd6b6b 8px 8px 0 0;
+    box-shadow: black 8px 8px 0 0;
     transform: translate(4px, 4px);
     transition: 0.2s;
 }
 
-.submission-section {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    min-height:65vh;
-}
-.submission-h1 {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 
 /* Media Queries */
+/* abnormal width so that my name in the header is hidden before it starts to take two lines*/
+@media (max-width: 1010px) {
 
-@media (min-width: 768px) {
-  #submit {
-    min-width: 7.5rem;
-    padding: 0 1.5rem;
-  }
+    /* header */
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        margin: 0.25rem 7.5rem;
+        padding: 0.25rem 0rem;
+        align-items: center;
+    }
+
+    li {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-name {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Main sections */
+
+    main {
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 10rem 1rem;
+        justify-content: center;
+    }
+
+    blockquote {
+        font-size: 1.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    #submit {
+        min-width: 7.5rem;
+        padding: 0 1.5rem;
+    }
+
+    /* Footer */
+
+    .footer-ul {
+        display: flex;
+        flex-direction: row;
+    }
 }

@@ -24,7 +24,7 @@ main {
     font-size: 1.5rem;
     text-align: left;
     max-width: 65vw;
-    min-height: 100vh;
+    min-height: 92vh;
     margin: 0 auto;
     /*makes the main section take up 100% of viewport height*/
     padding: 5rem 1rem;
@@ -50,7 +50,6 @@ header {
     padding: 0em 1em 0em 1em;
     position: fixed; /*  header persists at top of page  */ 
     top: 0;
-    /*this ensures header stretches across viewport fully*/
     box-shadow: 0 2px 4px -1px rgb(54, 40, 2);
     overflow: auto;
 }
@@ -75,7 +74,7 @@ h2 {
 }
 
 footer {
-    background-color: azure;
+    background-color: #d98d3d;
     text-align: center;
     min-width: 100%;
     position: relative;
@@ -212,3 +211,89 @@ img {
     width: 20rem;
 }
 
+.submission-main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #38192d ;
+    border:2px solid #38192d;
+    color:#e3e6c5;
+    font-size:2rem;
+    padding: 4rem;
+    margin: 1rem;
+    max-width: 55vw;
+    min-height: 8rem;
+    border-radius:5%;
+    box-shadow: 5px 10px 5px #554951;
+    border-radius:5%;
+    overflow: auto;
+}
+
+label {
+    margin: 1rem 0;
+}
+
+input {
+    line-height:1.5rem;
+    min-height:2rem;
+}
+
+#message {
+    margin-bottom:2rem;
+}
+
+#submit {
+    background-color:#d98d3d;
+    color:#ffffff;
+    text-shadow: 0px 2px 1px black;
+    border: 2px solid #f5aa5b;
+    border-radius: 1.5rem;
+    box-shadow: #422800 3px 3px 0 0;    
+    cursor: pointer;
+    display: inline-block;
+    font-weight:700;
+    font-size:1rem;
+    padding: 0.5rem 1.5rem;
+    line-height:2rem;
+    text-align: center;
+    text-decoration: none;   
+}
+
+#submit:hover {
+    background-color: #d98d3d;
+}
+
+#submit:active {
+    box-shadow: #dd6b6b 8px 8px 0 0;
+    transform: translate(4px, 4px);
+    transition: 0.2s;
+}
+
+.submission-section {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:65vh;
+}
+.submission-h1 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  #submit {
+    min-width: 7.5rem;
+    padding: 0 1.5rem;
+  }
+}
